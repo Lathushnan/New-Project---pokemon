@@ -1,0 +1,52 @@
+@use "../abstracts/color" as clr;
+@use "../abstracts/functions" as fun;
+@use "../abstracts/mixins" as responsive;
+
+.btn {
+   padding: 0.5rem 2rem;
+   background: fun.theme-colors("dark");
+   color: fun.theme-colors();
+   border: 2px solid fun.theme-colors();
+   font-size: 1.5rem;
+   transition: all ease 0.2s;
+   cursor: pointer;
+   font-weight: 500;
+   border-radius: 5px;
+   @include responsive.breakpoint(xs) {
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+   }
+   @include responsive.breakpoint(sm, "sm-md") {
+      font-size: 1.5rem;
+      padding: 0.5rem 1.5rem;
+      margin-bottom: 0.75rem;
+   }
+   @include responsive.breakpoint(md) {
+      margin-bottom: 0.75rem;
+   }
+   @include responsive.breakpoint(xlg) {
+      font-size: 2rem;
+   }
+
+   &-primary-blue {
+      @extend .btn;
+      border-color: fun.theme-colors();
+      color: fun.theme-colors();
+
+      &:hover {
+         background: fun.theme-colors();
+         color: fun.theme-colors("dark");
+      }
+   }
+
+   &-primary-red {
+      @extend .btn;
+      border-color: fun.theme-colors("red");
+      color: fun.theme-colors("red");
+
+      &:hover {
+         background: fun.theme-colors("red");
+         color: fun.theme-colors("dark");
+      }
+   }
+}

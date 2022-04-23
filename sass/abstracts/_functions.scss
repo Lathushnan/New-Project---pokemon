@@ -1,0 +1,5 @@
+@use "./color" as clr;
+
+@function theme-colors($Primary-B: "blue") {
+   @return map-get(clr.$theme-colors, $Primary-B);
+}

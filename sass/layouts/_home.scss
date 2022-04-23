@@ -1,0 +1,137 @@
+@use "../abstracts/functions" as fun;
+@use "../abstracts/mixins" as responsive;
+
+.home {
+   padding: 5rem 10rem;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   color: #fff;
+
+   @include responsive.breakpoint(xs) {
+      padding: 3rem 2rem;
+      flex-direction: column-reverse;
+      justify-content: center;
+   }
+   @include responsive.breakpoint(sm, "sm-md") {
+      padding: 2rem;
+      justify-content: center;
+   }
+   @include responsive.breakpoint(md) {
+      padding: 2rem  3rem;
+   }
+   @include responsive.breakpoint(lg) {
+      padding: 5rem 4rem;
+      flex-direction: row;
+      justify-content: space-around;
+   }
+   @include responsive.breakpoint(xlg) {
+      padding: 3rem 5rem;
+   }
+   @include responsive.breakpoint(xxlg) {
+      padding: 8rem 15rem;
+   }
+
+   &--content {
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-right: 1px solid rgba(255, 255, 255, 0.2);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      backdrop-filter: blur(25px);
+      margin-right: 5rem;
+
+      @include responsive.breakpoint(xs) {
+         margin-right: 0rem;
+         margin-top: 1rem;
+      }
+      @include responsive.breakpoint(sm, "sm-md") {
+         margin-right: 2rem;
+      }
+      @include responsive.breakpoint(md) {
+         margin-right: 4rem;
+      }
+      @include responsive.breakpoint(lg) {
+         margin-right: 5rem;
+      }
+      @include responsive.breakpoint(xxlg) {
+         margin-right: 6rem;
+      }
+
+      h1 {
+         font-size: 2rem;
+         text-shadow: 5px 5px 0 fun.theme-colors("dark");
+         text-align: center;
+
+         @include responsive.breakpoint(xs) {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+         }
+         @include responsive.breakpoint(sm, "sm-md") {
+            font-size: 1.8rem;
+         }
+         @include responsive.breakpoint(lg) {
+            font-size: 2rem;
+         }
+         @include responsive.breakpoint(xlg) {
+            font-size: 2.5rem;
+         }
+         @include responsive.breakpoint(xxlg) {
+            font-size: 3.5rem;
+         }
+
+         span.Blue {
+            color: fun.theme-colors();
+         }
+
+         span.Red {
+            color: fun.theme-colors("red");
+         }
+      }
+
+      p {
+         line-height: 1.5;
+         font-size: 1rem;
+
+         @include responsive.breakpoint(xs) {
+            font-size: 0.75rem;
+            line-height: 1.2;
+         }
+         @include responsive.breakpoint(sm, "sm-md") {
+            font-size: 1rem;
+         }
+         @include responsive.breakpoint(lg) {
+            font-size: 1rem;
+         }
+         @include responsive.breakpoint(xlg) {
+            font-size: 1.2rem;
+         }
+      }
+   }
+
+   &--img {
+      width: auto;
+
+      img {
+         width: 23rem;
+         border-radius: 10px;
+
+         @include responsive.breakpoint(xs) {
+            width: 18rem;
+         }
+         @include responsive.breakpoint(sm, "sm-md") {
+            width: 20rem;
+         }
+         @include responsive.breakpoint(lg) {
+            width: 23rem;
+         }
+         @include responsive.breakpoint(xlg) {
+            width: 25rem;
+         }
+         @include responsive.breakpoint(xxlg) {
+            width: 32rem;
+         }
+      }
+   }
+}

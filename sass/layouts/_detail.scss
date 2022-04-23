@@ -1,0 +1,119 @@
+@use "../abstracts/functions" as fun;
+@use "../abstracts/mixins" as responsive;
+
+.detail {
+   height: auto;
+   padding: 5rem 10rem;
+
+   @include responsive.breakpoint(xs) {
+      padding: 2rem;
+   }
+   @include responsive.breakpoint(sm, "sm-md") {
+      padding: 3rem 2rem;
+   }
+   @include responsive.breakpoint(md) {
+      padding: 3rem 4rem;
+   }
+   @include responsive.breakpoint(lg) {
+      padding: 5rem 3rem;
+   }
+
+   &--content {
+      // glass
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-right: 1px solid rgba(255, 255, 255, 0.2);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      backdrop-filter: blur(25px);
+      // glass
+      padding: 4rem;
+
+      @include responsive.breakpoint(xs) {
+         padding: 2rem;
+      }
+      @include responsive.breakpoint(sm, "sm-md") {
+         padding: 3rem;
+      }
+      @include responsive.breakpoint(md) {
+         padding: 3.5rem;
+      }
+      @include responsive.breakpoint(lg) {
+         padding: 4rem;
+      }
+
+      h1 {
+         text-align: center;
+         font-size: 2rem;
+         line-height: 1.5;
+         color: fun.theme-colors("light");
+
+         @include responsive.breakpoint(xs) {
+            font-size: 1.5rem;
+         }
+         @include responsive.breakpoint(md) {
+            font-size: 2.5rem;
+         }
+         @include responsive.breakpoint(xlg) {
+            font-size: 3rem;
+         }
+         @include responsive.breakpoint(xxlg) {
+            font-size: 4rem;
+         }
+      }
+
+      p {
+         text-align: justify;
+         color: fun.theme-colors("light");
+         line-height: 1.5;
+
+         @include responsive.breakpoint(xs) {
+            font-size: 0.8rem;
+         }
+         @include responsive.breakpoint(sm, "sm-md") {
+            font-size: 1rem;
+         }
+         @include responsive.breakpoint(md) {
+            font-size: 1.2rem;
+         }
+         @include responsive.breakpoint(lg) {
+            font-size: 1.3rem;
+         }
+      }
+
+      &--image {
+         width: 20rem;
+         shape-margin: 1.5rem;
+
+         @include responsive.breakpoint(xs) {
+            width: 10rem;
+         }
+         @include responsive.breakpoint(sm, "sm-md") {
+            width: 13rem;
+         }
+         @include responsive.breakpoint(md) {
+            width: 20rem;
+         }
+         @include responsive.breakpoint(lg) {
+            width: 25rem;
+         }
+         @include responsive.breakpoint(xlg) {
+            width: 28rem;
+         }
+         @include responsive.breakpoint(xxlg) {
+            width: 35rem;
+         }
+
+         &.sword {
+            float: left;
+            shape-outside: url("../../Images/logo-pokemon-sword.png");
+         }
+
+         &.shield {
+            float: right;
+            shape-outside: url("../../Images/logo-pokemon-shield.png");
+         }
+      }
+   }
+}

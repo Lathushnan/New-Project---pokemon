@@ -31,3 +31,4 @@ const displayPokemon = (pokemon) => {
 
    pokemonPokedex.innerHTML += pokemonHTMLString;
 };
+

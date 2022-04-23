@@ -23,13 +23,11 @@ Promise.all(promises).then((result) => {
 const displayPokemon = (pokemon) => {
    const pokemonHTMLString = `
    <li class="pokemons--pokedex--card" name="card">
+   <img class="pokemons--pokedex--card--image" src="${pokemon.image}"/>
    <h2 class="pokemons--pokedex--card--title">${pokemon.id}. ${pokemon.name}</h2>
    <p class="pokemons--pokedex--card--subtitle" name="Type"> ${pokemon.type}</p>
    </li>
    `;
-   // <img class="pokemons--pokedex--card--image" src="${pokemon.image}"/>
+
    pokemonPokedex.innerHTML += pokemonHTMLString;
-
 };
-
-
